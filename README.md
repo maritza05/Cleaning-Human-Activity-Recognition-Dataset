@@ -49,4 +49,10 @@ Therefore, the content of this project involves:
 * _utilities.R_: utilities and low level functions.
 * _CodeBook.md_: A description of the variable names and the general tidy process.
 
+Executing the _run_analysis.R_ will produce two text files: main_data.txt and avg_data.txt. Who contains the general tidy dataset and the independent dataset from step 5. 
+This files can be read back into R with the following code:
+```
+main_data <- read.table(path_to_main_data.txt, header = TRUE)
+View(main_data)
+```
 To see an overview of the general transformations applied to the dataset you can see the CodeBook.md file.
