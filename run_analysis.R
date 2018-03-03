@@ -1,6 +1,6 @@
 library(dplyr)
 
-setwd("~/Documents/coursera/dataScience/DataCleaning")
+
 source("./utilities.R")
 
 # Paths and filenames
@@ -39,4 +39,5 @@ avg_data <- main_data %>%
         group_by(activity, subject) %>%
         summarise_all(mean)
 
-
+write_data(main_data, "main_data.txt")
+write_data(avg_data, "avg_data.txt")

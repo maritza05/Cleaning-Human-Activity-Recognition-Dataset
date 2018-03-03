@@ -40,3 +40,8 @@ read_data <- function(base_path, file_name) {
         data <- read.table(path)
         data
 }
+
+write_data <- function(data, file_name){
+        path <- file.path(file_name)
+        write.table(data, path, row.names = FALSE)
+}
