@@ -1,6 +1,5 @@
 library(dplyr)
 
-
 source("./utilities.R")
 
 # Paths and filenames
@@ -18,8 +17,6 @@ train_activities_file <- "train/y_train.txt"
 test_activities_file <- "test/y_test.txt"
 activity_labels_file <- "activity_labels.txt"
 
-
-
 main_data <- append_data(dataset_path, train_file, test_file)
 
 features <- get_valid_features(dataset_path, features_file)
@@ -35,6 +32,8 @@ main_data <- main_data[, features$indexes]
 main_data <- cbind(subject_data, activities_data, main_data)
 names(main_data) <- c("subject", "activity", features$names)
 
+# Independent dataset with the average measure of each variable
+# each activity and each subject
 avg_data <- main_data %>%
         group_by(activity, subject) %>%
         summarise_all(mean)
